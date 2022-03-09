@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import TodoItem from "./components/todo-item/todo-item";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+        <li>
+          <TodoItem
+            header={"Buy milk"}
+            description={"Prostokvashino, 1L"}
+            isFinised={false}
+          />
+        </li>
+
+        <li>
+          <TodoItem
+            header={"Buy car"}
+            description={"Porshe Carrera, very cool"}
+            isFinised={false}
+          />
+        </li>
+
+        <li>
+          <TodoItem
+            header={"Text to mum"}
+            description={"Tell her how cool she is"}
+            isFinised={true}
+          />
+        </li>
+      </ul>
     </div>
   );
 }
