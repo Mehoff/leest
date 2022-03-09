@@ -1,17 +1,34 @@
 import * as React from "react";
-import TodoItemProps from "../../interfaces/todo-item-props.interface";
-import styles from "./todo-item.module.css";
+import TodoItemProps from "./todo-item-props.interface";
+
+import {
+  ListItem,
+  ListItemText,
+  IconButton,
+  ListItemAvatar,
+  Avatar,
+} from "@mui/material";
+
+import CoffeeIcon from "@mui/icons-material/Coffee";
+import DoneIcon from "@mui/icons-material/Done";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const TodoItem: React.FC<TodoItemProps> = (props) => {
   return (
-    <div
-      className={`${styles.Wrapper} ${
-        props.isFinised ? styles.IsFinished : styles.NotFinished
-      }`}
+    <ListItem
+      secondaryAction={
+        <IconButton edge="end" aria-label="delete">
+          {props.isFinised ? <CancelIcon /> : <DoneIcon />}
+        </IconButton>
+      }
     >
-      <p className={styles.Header}>{props.header}</p>
-      <span> &gt;{props.description}</span>
-    </div>
+      <ListItemAvatar>
+        <Avatar>
+          <CoffeeIcon />
+        </Avatar>
+      </ListItemAvatar>
+      <ListItemText primary={props.header} secondary={props.description} />
+    </ListItem>
   );
 };
 
