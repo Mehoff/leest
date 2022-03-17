@@ -9,15 +9,17 @@ interface TodoListProps {
 
 const TodoList: React.FC<TodoListProps> = (props: TodoListProps) => {
   return (
-    <ul className={styles.Wrapper}>
-      {props.todos.map((todo: ITodo, key: number) => {
-        return (
-          <li key={key}>
-            <TodoItem todo={todo} />
-          </li>
-        );
-      })}
-    </ul>
+    <div className={styles.Wrapper}>
+      <ul>
+        {props.todos.map((todo: ITodo, key: number) => {
+          return (
+            <li key={key}>
+              <TodoItem todo={todo} />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 

@@ -14,8 +14,8 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
         todo.header ? styles.IsFinished : styles.NotFinished
       }`}
     >
-      <h2>{todo.header}</h2>
-      <h3>{todo.description}</h3>
+      <h2 className={styles.Header}>{todo.header}</h2>
+      <h3 className={styles.Description}>{todo.description}</h3>
     </div>
   );
 };
