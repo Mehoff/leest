@@ -6,6 +6,7 @@ import ITodo from "../../interfaces/ITodo";
 interface TodoItemProps {
   todo: ITodo;
 }
+
 const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
   return (
     <div
@@ -13,10 +14,8 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
         todo.header ? styles.IsFinished : styles.NotFinished
       }`}
     >
-      <p>
-        <h2>{todo.header}</h2>
-        <h3>{todo.description}</h3>
-      </p>
+      <h2>{todo.header}</h2>
+      <h3>{todo.description}</h3>
     </div>
   );
 };

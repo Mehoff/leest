@@ -1,20 +1,19 @@
 import * as React from "react";
-import Todo from "../../interfaces/ITodo";
+import ITodo from "../../interfaces/ITodo";
 import TodoItem from "../todo-item";
 import styles from "./todo-list.module.css";
 
 interface TodoListProps {
-  todos: Todo[];
+  todos: ITodo[];
 }
 
 const TodoList: React.FC<TodoListProps> = (props: TodoListProps) => {
   return (
     <ul className={styles.Wrapper}>
-      {props.todos.map((todo: Todo, key: number) => {
+      {props.todos.map((todo: ITodo, key: number) => {
         return (
-          <li>
-            <h1>Hello world</h1>
-            {/* <TodoItem todo={todo} key={key} /> */}
+          <li key={key}>
+            <TodoItem todo={todo} />
           </li>
         );
       })}
