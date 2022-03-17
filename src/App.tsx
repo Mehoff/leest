@@ -15,8 +15,9 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <TodoList todos={todos} />
+      <h1 className={styles.Logo}>Leest</h1>
       <CreateTodoItem addTodo={addTodo} />
+      <TodoList todos={todos} />
     </div>
   );
 }

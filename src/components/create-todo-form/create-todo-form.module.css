@@ -1,0 +1,40 @@
+.Label {
+  text-align: left;
+}
+
+.HeaderInput {
+  width: 60vh;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #04aa6d;
+  border-radius: 4px;
+}
+
+.DescriptionTextArea {
+  width: 60vh;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #04aa6d;
+  border-radius: 4px;
+  resize: none;
+}
+
+.AddTodoButton {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+
+  transition: 200ms;
+}
+
+.AddTodoButton:hover {
+  background-color: #058154;
+  cursor: pointer;
+}

@@ -1,4 +1,6 @@
 import { useState, ChangeEvent } from "react";
+import styles from "./create-todo-form.module.css";
+
 import ITodo from "../../interfaces/ITodo";
 
 interface CreateTodoItemProps {
@@ -33,23 +35,29 @@ const CreateTodoItem: React.FC<CreateTodoItemProps> = ({ addTodo }) => {
 
   return (
     <>
-      <label htmlFor="header">Header</label>
-      <input
-        name="header"
-        id="todo-header"
-        placeholder="Bring Mary her book back"
-        value={header}
-        onChange={onInputChange}
-      ></input>
-      <label htmlFor="description">Description</label>
-      <textarea
-        name="description"
-        id="todo-description"
-        placeholder="It should be done before it is too late"
-        value={description}
-        onChange={onTextAreaChange}
-      ></textarea>
-      <button onClick={onAddTodoClick}>Add todo</button>
+      <div>
+        <input
+          className={styles.HeaderInput}
+          name="header"
+          id="todo-header"
+          placeholder="Bring Mary her book back"
+          value={header}
+          onChange={onInputChange}
+        ></input>
+      </div>
+      <div>
+        <textarea
+          className={styles.DescriptionTextArea}
+          name="description"
+          id="todo-description"
+          placeholder="It should be done before it is too late"
+          value={description}
+          onChange={onTextAreaChange}
+        ></textarea>
+      </div>
+      <button className={styles.AddTodoButton} onClick={onAddTodoClick}>
+        Add
+      </button>
     </>
   );
 };
