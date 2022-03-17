@@ -1,5 +1,5 @@
+import ITodo from "../../interfaces/ITodo";
+
 export default interface TodoItemProps {
-  header: string;
-  description: string;
-  isFinised: boolean;
+  todo: ITodo;
 }

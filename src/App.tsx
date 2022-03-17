@@ -1,31 +1,18 @@
-import React from "react";
-import "./App.css";
+import styles from "./App.module.css";
 
-import Button from "@mui/material/Button";
 import TodoItem from "./components/todo-item/todo-item";
-// import TodoList from "./components/todo-list/todo-list";
+import ITodo from "./interfaces/ITodo";
 
 function App() {
-  //TODO: Cover with List
-  return (
-    <div className="App">
-      <TodoItem
-        header={"Buy milk"}
-        description={"Prostokvashino, 1L"}
-        isFinised={false}
-      ></TodoItem>
-      <TodoItem
-        header={"Buy car"}
-        description={"Porshe Carrera, very cool"}
-        isFinised={false}
-      ></TodoItem>
-      <TodoItem
-        header={"Text to mum"}
-        description={"Tell her how cool she is"}
-        isFinised={true}
-      ></TodoItem>
+  const todo: ITodo = {
+    header: "Header",
+    description: "descrtasdmkamsd",
+    isFinised: false,
+  };
 
-      <Button variant="contained">Click me!</Button>
+  return (
+    <div className={styles.App}>
+      <TodoItem todo={todo}></TodoItem>
     </div>
   );
 }
