@@ -7,3 +7,15 @@ export const AddTodo = (todo: ITodo) => {
     dispatch({ type: TodoActions.ADD_TODO, payload: todo });
   };
 };
+
+export const FinishTodo = (todo: ITodo) => {
+  return (dispatch: Dispatch<TodoAction>) => {
+    dispatch({ type: TodoActions.FINISH_TODO, payload: todo });
+  };
+};
+
+export const UnfinishTodo = (todo: ITodo) => {
+  return (dispatch: Dispatch<TodoAction>) => {
+    dispatch({ type: TodoActions.UNFINISH_TODO, payload: todo });
+  };
+};
