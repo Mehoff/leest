@@ -9,19 +9,15 @@ interface TodoItemProps {
   setTodos: (todos: ITodo[]) => void;
 }
 
-const TodoItem: React.FC<TodoItemProps> = (props) => {
-  const [todo] = React.useState<ITodo>(props.todo);
-
+const TodoItem: React.FC<TodoItemProps> = ({ todo, todos, setTodos }) => {
   const onTodoClick = (): void => {
-    const _todos = [...props.todos];
+    const _todos = [...todos];
 
     const clickedTodo = _todos.find((t: ITodo) => t.id === todo.id);
     if (!clickedTodo) return;
 
     clickedTodo.isFinised = !clickedTodo.isFinised;
-
-    props.setTodos(_todos);
-    console.log(props.todos);
+    setTodos(_todos);
   };
 
   return (

@@ -9,8 +9,19 @@ interface TodoListProps {
 }
 
 const TodoList: React.FC<TodoListProps> = (props: TodoListProps) => {
+  const finishedCount = props.todos.filter((t) => t.isFinised).length;
+
   return (
     <div className={styles.Wrapper}>
+      {props.todos.length ? (
+        <div className={styles.Counter}>
+          <span>
+            Done {finishedCount} of {props.todos.length}
+          </span>
+        </div>
+      ) : (
+        <></>
+      )}
       <ul>
         {props.todos.map((todo: ITodo, key: number) => {
           return (
