@@ -1,4 +1,9 @@
 .Wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   width: 60vh;
   opacity: 0.7;
   padding: 10px;
