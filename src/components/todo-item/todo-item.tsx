@@ -9,17 +9,16 @@ interface TodoItemProps {
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
-
-  const { FinishTodo, UnfinishTodo } = useActions()
+  const { FinishTodo, UnfinishTodo } = useActions();
 
   const onTodoClick = () => {
-    todo.isFinised ? UnfinishTodo(todo) : FinishTodo(todo);
-  }
+    todo.isFinished ? UnfinishTodo(todo) : FinishTodo(todo);
+  };
 
   return (
     <div
       className={`${styles.Wrapper} ${
-        todo.isFinised ? styles.NotFinished : styles.IsFinished
+        todo.isFinished ? styles.NotFinished : styles.IsFinished
       }`}
       onClick={onTodoClick}
     >

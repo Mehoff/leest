@@ -31,7 +31,7 @@ const CreateTodoItem: React.FC = () => {
       id: uuidv4(),
       header: h,
       description: d,
-      isFinised: false,
+      isFinished: false,
     };
 
     AddTodo(todo);

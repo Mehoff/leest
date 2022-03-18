@@ -7,7 +7,7 @@ import styles from "./todo-list.module.css";
 
 const TodoList: React.FC = () => {
   const { todos } = useTypedSelector((state) => state.todo);
-  const finishedCount = todos.filter((t) => t.isFinised).length;
+  const finishedCount = todos.filter((t) => t.isFinished).length;
 
   return (
     <div className={styles.Wrapper}>
