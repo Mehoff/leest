@@ -5,14 +5,8 @@ import ITodo from "../../interfaces/ITodo";
 import TodoItem from "../todo-item";
 import styles from "./todo-list.module.css";
 
-// interface TodoListProps {
-//   todos: ITodo[];
-//   setTodos: (todos: ITodo[]) => void;
-// }
-
 const TodoList: React.FC = () => {
   const { todos } = useTypedSelector((state) => state.todo);
-
   const finishedCount = todos.filter((t) => t.isFinised).length;
 
   return (
@@ -30,11 +24,7 @@ const TodoList: React.FC = () => {
         {todos.map((todo: ITodo, key: number) => {
           return (
             <li key={key}>
-              <TodoItem
-                todo={todo}
-                // todos={props.todos}
-                // setTodos={props.setTodos}
-              />
+              <TodoItem todo={todo} />
             </li>
           );
         })}

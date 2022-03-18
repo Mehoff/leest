@@ -1,17 +1,15 @@
 import { useState, ChangeEvent } from "react";
+import { v4 as uuidv4 } from "uuid";
 import styles from "./create-todo-form.module.css";
 
-import { v4 as uuidv4 } from "uuid";
 import ITodo from "../../interfaces/ITodo";
+import { useActions } from "../../hooks/useActions";
 
-interface CreateTodoItemProps {
-  todos: ITodo[];
-  setTodos: (todos: ITodo[]) => void;
-}
-
-const CreateTodoItem: React.FC<CreateTodoItemProps> = ({ todos, setTodos }) => {
+const CreateTodoItem: React.FC = () => {
   const [header, setHeader] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+
+  const { AddTodo } = useActions();
 
   const onInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const text = e.target.value;
@@ -36,7 +34,8 @@ const CreateTodoItem: React.FC<CreateTodoItemProps> = ({ todos, setTodos }) => {
       isFinised: false,
     };
 
-    setTodos([...todos, todo]);
+    AddTodo(todo);
+
     setHeader("");
     setDescription("");
   };

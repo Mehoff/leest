@@ -18,8 +18,7 @@ const todoReducer = (
 ): TodoState => {
   switch (action.type) {
     case TodoActions.ADD_TODO:
-      state.todos = [...state.todos, action.payload];
-      return state;
+      return { todos: [...state.todos, action.payload] };
     default:
       return state;
   }
