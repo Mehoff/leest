@@ -13,10 +13,9 @@ const TodoItem: React.FC<TodoItemProps> = (props) => {
   const [todo] = React.useState<ITodo>(props.todo);
 
   const onTodoClick = (): void => {
-    // BAD BAD BAD, TODO: unique identifier for todos
     const _todos = [...props.todos];
 
-    const clickedTodo = _todos.find((t: ITodo) => t.header === todo.header);
+    const clickedTodo = _todos.find((t: ITodo) => t.id === todo.id);
     if (!clickedTodo) return;
 
     clickedTodo.isFinised = !clickedTodo.isFinised;

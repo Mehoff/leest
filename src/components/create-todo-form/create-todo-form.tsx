@@ -1,6 +1,7 @@
 import { useState, ChangeEvent } from "react";
 import styles from "./create-todo-form.module.css";
 
+import { v4 as uuidv4 } from "uuid";
 import ITodo from "../../interfaces/ITodo";
 
 interface CreateTodoItemProps {
@@ -29,6 +30,7 @@ const CreateTodoItem: React.FC<CreateTodoItemProps> = ({ todos, setTodos }) => {
     const d = description.trim();
 
     const todo: ITodo = {
+      id: uuidv4(),
       header: h,
       description: d,
       isFinised: false,
