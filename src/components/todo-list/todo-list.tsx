@@ -5,6 +5,7 @@ import styles from "./todo-list.module.css";
 
 interface TodoListProps {
   todos: ITodo[];
+  setTodos: (todos: ITodo[]) => void;
 }
 
 const TodoList: React.FC<TodoListProps> = (props: TodoListProps) => {
@@ -14,7 +15,11 @@ const TodoList: React.FC<TodoListProps> = (props: TodoListProps) => {
         {props.todos.map((todo: ITodo, key: number) => {
           return (
             <li key={key}>
-              <TodoItem todo={todo} />
+              <TodoItem
+                todo={todo}
+                todos={props.todos}
+                setTodos={props.setTodos}
+              />
             </li>
           );
         })}

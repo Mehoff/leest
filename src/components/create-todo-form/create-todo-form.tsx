@@ -4,10 +4,11 @@ import styles from "./create-todo-form.module.css";
 import ITodo from "../../interfaces/ITodo";
 
 interface CreateTodoItemProps {
-  addTodo: (todo: ITodo) => void;
+  todos: ITodo[];
+  setTodos: (todos: ITodo[]) => void;
 }
 
-const CreateTodoItem: React.FC<CreateTodoItemProps> = ({ addTodo }) => {
+const CreateTodoItem: React.FC<CreateTodoItemProps> = ({ todos, setTodos }) => {
   const [header, setHeader] = useState<string>("");
   const [description, setDescription] = useState<string>("");
 
@@ -22,13 +23,18 @@ const CreateTodoItem: React.FC<CreateTodoItemProps> = ({ addTodo }) => {
   };
 
   const onAddTodoClick = () => {
+    const h = header.trim();
+    if (!h) return;
+
+    const d = description.trim();
+
     const todo: ITodo = {
-      header: header.trim(),
-      description: description.trim(),
+      header: h,
+      description: d,
       isFinised: false,
     };
 
-    addTodo(todo);
+    setTodos([...todos, todo]);
     setHeader("");
     setDescription("");
   };
